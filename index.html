@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <title>👴🏻👴🏼👴🏽👴🏾👴🏿 jQuery</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <main>
+            <p>
+                <a href="index.html" class="activo">Hola</a>
+                <a href="page-1.html">Selecciona</a>
+                <a href="page-2.html">Foto</a>
+            </p>
+            <h1></h1>
+            <h2></h2>
+            <p id="aqui"></p>
+            <p id="alla" class="escondido"></p>
+        </main>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            var texto = {
+                saludo: ["¡Hola caos!", "¡Hola cosmos!"],
+                nombre: "Mi nombre es Florencia Rodríguez",
+                motivo: "Tomé y sigo en este curso porque con las pocas clases que hemos tenido, he podido notar mi avance de aprendizajes y de entender una logica que al principio encontraba muy compleja (aún un poco😅). Pero tengo fe en que cada semana iré entendiendo más y al finalizar el semestre ya no tendré la lejanía y temor que tenía antes de tomar este curso. Además creo que las dinámcias de las clases y evaluaciones en este horairo está siendo súper compatible con mi carga del semestre, especialmente considerando que estoy trabajando en mi proyecto de título  <span>molestie…</span>.",
+                etc: "Ya revisé mi primera nota y la verdad es que me fue mejor de lo que esperaba. También noto mi avance respecto a antes de partir el curso, porque llegué a la primera clase sin entender y salí de la primera clase entendiendo menos, pero ya le estoy tomando el ritmo y entendiendo la lógica.",
+            };
+            var aleatorio = Math.floor(Math.random() * texto.saludo.length);
+            console.log(aleatorio);
+            $("h1").html(texto.saludo[aleatorio]);
+            $("h2").html(texto.nombre);
+            $("#aqui").html(texto.motivo);
+            $("#alla").html(texto.etc);
+            function revelador() {
+                $("#alla").toggleClass("escondido");
+            }
+            $("span").hover(revelador);
+        </script>
+    </body>
+</html>
